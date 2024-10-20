@@ -119,7 +119,7 @@ def send_summary_email(summary_data):
             subject=subject,
             message=message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=['tech@themedius.ai'],
+            recipient_list=['venuchander11@gmail.com'],
             fail_silently=False,
         )
         return True
