@@ -51,7 +51,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'DevTest.wsgi.application'
+WSGI_APPLICATION = 'DevTest.wsgi.app'
 
 DATABASES = {
     'default': {
