@@ -7,6 +7,9 @@
 {% block header %}Excel/CSV File Upload{% endblock %}
 
 {% block content %}
+<!-- Link to your CSS file -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <div class="card upload-form">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
