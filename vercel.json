@@ -1,5 +1,4 @@
 {
-    "version": 2,
     "builds": [
         {
             "src": "DevTest/wsgi.py",
@@ -10,12 +9,11 @@
     "routes": [
         {
             "src": "/static/(.*)",
-            "dest": "DevTest/static/$1" 
+            "dest": "DevTest/staticfiles/$1"
         },
         {
             "src": "/(.*)",
-            "dest": "DevTest/wsgi.py"  
+            "dest": "DevTest/wsgi.py"
         }
-    ],
-    "public": "DevTest/staticfiles" 
+    ]
 }
