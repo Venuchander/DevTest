@@ -1,20 +1,23 @@
 {
-    "version": 2,
     "builds": [
         {
             "src": "DevTest/wsgi.py",
             "use": "@vercel/python",
-            "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
+            "config": { 
+                "maxLambdaSize": "15mb", 
+                "runtime": "python3.12",
+                "buildCommand": "python manage.py collectstatic --noinput"
+            }
         }
     ],
     "routes": [
         {
             "src": "/static/(.*)",
-            "dest": "DevTest/staticfiles/$1" 
+            "dest": "/static/$1"
         },
         {
             "src": "/(.*)",
-            "dest": "DevTest/wsgi.py"  
+            "dest": "DevTest/wsgi.py"
         }
     ]
 }
