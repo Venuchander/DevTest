@@ -12,7 +12,7 @@
     ],
     "routes": [
         {
-            "src": "/static/(.*)",
+            "src": "DevTest/static/(.*)",
             "dest": "/static/$1"
         },
         {
