@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Summary Report{% endblock %}
+
+{% block header %}Analysis Results{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="message success-message">
+        Summary has been sent to tech@themedius.ai
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">{{ summary|length }}</div>
+            <div class="stat-label">Total Records</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">{{ unique_states_count }}</div>
+            <div class="stat-label">Unique States</div>
+        </div>        
+        <div class="stat-card">
+            <div class="stat-value">{{ total_dpd }}</div>
+            <div class="stat-label">Total DPD</div>
+        </div>
+    </div>
+
+    <div class="summary-table-container">
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Pin Code</th>
+                    <th>DPD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in summary %}
+                <tr>
+                    <td>{{ row.state }}</td>
+                    <td>{{ row.pin }}</td>
+                    <td>{{ row.dpd }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="{% url 'upload_file' %}" class="button">Upload Another File</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block header %}Excel/CSV File Upload{% endblock %}
+
+{% block content %}
+<div class="card upload-form">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="form-label">Select File</label>
+            {{ form.file }}
+            <small class="help-text">Please upload an Excel or CSV file</small>
+        </div>
+        {% if error %}
+            <div class="message error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+        <button type="submit" class="button">Upload and Process</button>
+    </form>
+</div>
+{% endblock %}
